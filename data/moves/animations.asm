@@ -131,7 +131,7 @@ BattleAnimations::
 	dw BattleAnim_Waterfall
 	dw BattleAnim_Clamp
 	dw BattleAnim_Swift
-	dw BattleAnim_SkullBash
+	dw BattleAnim_IcicleCrash
 	dw BattleAnim_SpikeCannon
 	dw BattleAnim_Constrict
 	dw BattleAnim_Amnesia
@@ -2436,22 +2436,17 @@ BattleAnim_Crabhammer:
 	anim_loop 3, .loop
 	anim_ret
 
-BattleAnim_SkullBash:
-	anim_if_param_equal $1, BattleAnim_FocusEnergy
-	anim_1gfx BATTLE_ANIM_GFX_HIT
-	anim_bgeffect BATTLE_BG_EFFECT_SHAKE_SCREEN_X, $14, $2, $0
-	anim_wait 32
-	anim_call BattleAnim_TargetObj_1Row
-	anim_bgeffect BATTLE_BG_EFFECT_FLASH_INVERTED, $0, $8, $3
-	anim_bgeffect BATTLE_BG_EFFECT_TACKLE, $0, BG_EFFECT_USER, $0
-	anim_wait 4
-.loop
-	anim_sound 0, 1, SFX_HEADBUTT
-	anim_obj BATTLE_ANIM_OBJ_HIT_YFIX, 136, 56, $0
+BattleAnim_IcicleCrash:
+	anim_1gfx BATTLE_ANIM_GFX_ICE
+	anim_bgeffect BATTLE_BG_EFFECT_WHITE_HUES, $0, $8, $0
+	anim_obj BATTLE_ANIM_OBJ_ICE_BUILDUP, 136, 74, $10
+	anim_wait 128
+	anim_sound 0, 1, SFX_SHINE
 	anim_wait 8
-	anim_loop 3, .loop
-	anim_call BattleAnim_ShowMon_0
+	anim_sound 0, 1, SFX_SHINE
+	anim_wait 24
 	anim_ret
+; this makes no sense with the move's description but idk how fully-custom animations work so fuck it we ball
 
 BattleAnim_Kinesis:
 	anim_2gfx BATTLE_ANIM_GFX_MISC, BATTLE_ANIM_GFX_NOISE

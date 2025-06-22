@@ -129,7 +129,7 @@ MoveNames::
 	li "WATERFALL"
 	li "CLAMP"
 	li "SWIFT"
-	li "SKULL BASH"
+	li "ICICLE CRASH"
 	li "SPIKE CANNON"
 	li "CONSTRICT"
 	li "AMNESIA"

@@ -130,7 +130,7 @@ MoveDescriptions::
 	dw WaterfallDescription
 	dw ClampDescription
 	dw SwiftDescription
-	dw SkullBashDescription
+	dw IcicleCrashDescription
 	dw SpikeCannonDescription
 	dw ConstrictDescription
 	dw AmnesiaDescription
@@ -783,9 +783,9 @@ SwiftDescription:
 	db   "An attack that"
 	next "never misses.@"
 
-SkullBashDescription:
-	db   "1st turn: Prepare"
-	next "2nd turn: Attack@"
+IcicleCrashDescription:
+	db   "test"
+	next "test2@"
 
 SpikeCannonDescription:
 	db   "Fires spikes to"
